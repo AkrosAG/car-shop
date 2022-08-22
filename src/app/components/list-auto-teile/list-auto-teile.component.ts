@@ -28,10 +28,10 @@ export class ListAutoTeileComponent implements OnInit {
       id: 2,
       name: 'Continental Elite 4060740 Poly-V / Serpentine Belt',
       description:
-        "Continental Elite Poly-V / Serpentine Belts take performance to the next level with Quiet Channel Technology, making the belt run quieter and last longer. The combination of a unique staggered 'helicog' profile with advanced EPDM rubber compounds virtually eliminates the chirps, squeaks, and squeals typically associated with pulley misalignment. Advancements in design and materials give you the highest performance, low maintenance, and proven results – with no exceptions. The polyester tension member is specially treated to reduce elongation and is very compatible in the drive with automatic tensioners used today. The same advanced technology that makes these belts run so quietly also increases flexibility, abrasion, and heat resistance. That means you get a longer lasting, maintenance-free belt drive. Meets or exceeds SAE J1459 specs.",
+        'Continental Elite Poly-V / Serpentine Belts take performance to the next level with Quiet Channel Technology, making the belt run quieter and last longer.',
       quantity: 31,
       picture:
-        'https://images-na.ssl-images-amazon.com/images/I/81eIczjb9sL._SL1500_.jpg',
+        'https://images-na.ssl-images-amazon.com/images/I/91wNzKzaFmL._SL1500_.jpg',
       madeIn: 'DE',
       keywords: ['transmission', 'belt'],
       technical_details: {
