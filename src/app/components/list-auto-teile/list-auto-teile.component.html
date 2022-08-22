@@ -1,19 +1,21 @@
 <div class="ui middle aligned selection divided list">
-  <a class="item">
-    <img
-      class="ui tiny image"
-      *ngIf="autoTeile.picture"
-      [src]="autoTeile.picture"
-    />
-    <div class="content">
-      <div class="header">{{ autoTeile.name }}</div>
-      <div class="description" *ngIf="autoTeile.description">
-        {{ autoTeile.description }}
+  <ng-container *ngFor="let autoTeile of autoTeilen">
+    <a class="item">
+      <img
+        class="ui tiny image"
+        *ngIf="autoTeile.picture"
+        [src]="autoTeile.picture"
+      />
+      <div class="content">
+        <div class="header">{{ autoTeile.name }}</div>
+        <div class="description" *ngIf="autoTeile.description">
+          {{ autoTeile.description }}
+        </div>
+        <div class="metadata">
+          <br />
+          Stock: {{ autoTeile.quantity }}
+        </div>
       </div>
-      <div class="metadata">
-        <br />
-        Stock: {{ autoTeile.quantity }}
-      </div>
-    </div>
-  </a>
+    </a>
+  </ng-container>
 </div>
