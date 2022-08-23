@@ -1,5 +1,5 @@
 <div class="ui middle aligned selection divided list">
-  <ng-container *ngFor="let autoTeile of autoTeilen">
+  <ng-container *ngFor="let autoTeile of autoTeilen$ | async as autoTeilen">
     <a class="item">
       <img
         class="ui tiny image"
@@ -17,5 +17,8 @@
         </div>
       </div>
     </a>
+    <p *ngIf="autoTeilen && !autoTeilen.length">
+      Es wurden noch keinen AutoTeilen eingetragen
+    </p>
   </ng-container>
 </div>

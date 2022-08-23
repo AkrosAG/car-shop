@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AutoTeile } from 'src/app/model/auto-teile';
 import { AutoTeileService } from 'src/app/services/auto-teile.service';
 
@@ -8,11 +9,12 @@ import { AutoTeileService } from 'src/app/services/auto-teile.service';
   styleUrls: ['./list-auto-teile.component.css'],
 })
 export class ListAutoTeileComponent implements OnInit {
-  autoTeilen: AutoTeile[] = [];
+  // autoTeilen: AutoTeile[] = [];
+  autoTeilen$: Observable<AutoTeile[]> | undefined;
 
   constructor(private autoTeileService: AutoTeileService) {}
 
   ngOnInit(): void {
-    this.autoTeilen = this.autoTeileService.getAllAutoTeilen();
+    this.autoTeilen$ = this.autoTeileService.getAllAutoTeilen();
   }
 }
