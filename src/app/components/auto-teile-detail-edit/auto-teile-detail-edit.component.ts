@@ -1,25 +1,37 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { take } from 'rxjs/operators';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { AutoTeile } from 'src/app/model/auto-teile';
 import { AutoTeileService } from 'src/app/services/auto-teile.service';
+import { take } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-auto-teile-component',
-  templateUrl: './add-auto-teile-component.component.html',
-  styleUrls: ['./add-auto-teile-component.component.css'],
+  selector: 'app-auto-teile-detail-edit',
+  templateUrl: './auto-teile-detail-edit.component.html',
+  styleUrls: ['./auto-teile-detail-edit.component.css'],
 })
-export class AddAutoTeileComponentComponent implements OnInit {
+export class AutoTeileDetailEditComponent implements OnInit {
+  autoteile!: AutoTeile;
   autoteileForm!: FormGroup;
 
   constructor(
     private fb: FormBuilder,
+    private autoteileService: AutoTeileService,
     private router: Router,
-    private autoTeilService: AutoTeileService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.route.params.subscribe((params) => {
+      this.autoteileService
+        .getAutoTeile(params['autoteileId'])
+        .pipe(take(1))
+        .subscribe((autoteile) => {
+          this.autoteile = autoteile;
+          this.autoteileForm.patchValue({ ...this.autoteile });
+        });
+    });
   }
 
   initForm(): void {
@@ -48,7 +60,7 @@ export class AddAutoTeileComponentComponent implements OnInit {
   }
 
   submitForm(): void {
-    this.autoTeilService
+    this.autoteileService
       .addAuteile(this.autoteileForm.value)
       .pipe(take(1))
       .subscribe((response) => this.router.navigate(['', 'list']));

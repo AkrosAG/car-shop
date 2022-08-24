@@ -9,6 +9,7 @@ import { AutoTeileDetailAnsichtComponent } from './components/auto-teile-detail-
 import { AddAutoTeileComponentComponent } from './components/add-auto-teile-component/add-auto-teile-component.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AutoTeileDetailEditComponent } from './components/auto-teile-detail-edit/auto-teile-detail-edit.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AutoTeileDetailAnsichtComponent,
     AddAutoTeileComponentComponent,
     HomeComponent,
+    AutoTeileDetailEditComponent,
   ],
   imports: [
     BrowserModule,
