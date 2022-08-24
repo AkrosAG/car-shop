@@ -5,6 +5,4 @@ export interface AutoTeile {
   quantity: number;
   picture: string;
   madeIn: string;
-  keywords: string[];
-  technical_details: Object;
 }

@@ -18,4 +18,12 @@ export class AutoTeileService {
   getAutoTeile(autoteileId: string): Observable<AutoTeile> {
     return this.http.get<AutoTeile>(`${this.backendUrl}/${autoteileId}`);
   }
+
+  addAuteile(autoteile: AutoTeile): Observable<AutoTeile> {
+    return this.http.post<AutoTeile>(this.backendUrl, autoteile);
+  }
+
+  deleteAutoteile(autoteileId: string): Observable<any> {
+    return this.http.delete(`${this.backendUrl}/${autoteileId}`);
+  }
 }
