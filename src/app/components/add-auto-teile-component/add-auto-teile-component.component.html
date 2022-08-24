@@ -1,1 +1,37 @@
-<p>add-auto-teile-component works!</p>
+<form class="ui form" [formGroup]="autoteileForm" (ngSubmit)="submitForm()">
+  <label>Name</label>
+  <input name="name" formControlName="name" required />
+  <div *ngIf="isRequired('name')" class="ui negative message">
+    Autoteile name muss angegeben werden
+  </div>
+  <label>Anzahl</label>
+  <input name="quantity" formControlName="quantity" />
+  <div *ngIf="isRequired('quantity')" class="ui negative message">
+    Anzahl name muss angegeben werden
+  </div>
+  <div *ngIf="isNumberRequired('quantity')" class="ui negative message">
+    Anzahl muss a number sein
+  </div>
+  <label> Beschreibung</label>
+  <textarea name="description" formControlName="description"></textarea>
+  <label>Bilder</label>
+  <input placeholder="URL" formControlName="picture" />
+  <div class="form-group">
+    <label for="madeIn">Made in</label>
+    <select
+      class="form-control"
+      name="madeIn"
+      formControlName="madeIn"
+      required
+    >
+      <option value="DE">Germany</option>
+      <option value="USA">USA</option>
+      <option value="FR">France</option>
+      <option value="CH">China</option>
+    </select>
+  </div>
+
+  <button class="ui button" type="submit" [disabled]="autoteileForm?.invalid">
+    speichern
+  </button>
+</form>
