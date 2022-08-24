@@ -19,12 +19,12 @@
   <button class="ui tiny red labeled icon button">
     <i class="remove icon"></i> Autoteile löschen
   </button>
-  <!--   <a
+  <a
     class="ui tiny yellow labeled icon button"
-    [routerLink]="['../../admin/edit', book.isbn]"
+    [routerLink]="['/', 'edit', autoteile?.id]"
   >
-    <i class="write icon"></i> Buch bearbeiten
-  </a> -->
+    <i class="write icon"></i> Autoteile bearbeiten
+  </a>
 </div>
 
 <div *ngIf="!autoteile$">
