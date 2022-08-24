@@ -1,3 +1,32 @@
-<a [routerLink]="['/autoteile',1]"></a>
+<div *ngIf="autoteile$ | async as autoteile">
+  <h1>{{ autoteile?.name }}</h1>
+  <h3 *ngIf="autoteile?.name">{{ autoteile?.name }}</h3>
+  <div class="ui divider"></div>
+  <div class="ui grid">
+    <div class="four wide column">
+      <h4>Stock:</h4>
+      {{ autoteile?.quantity }}
+    </div>
+  </div>
+  <h4>Beschreibung</h4>
+  <p>{{ autoteile.description }}</p>
+  <div class="ui small images">
+    <img [src]="autoteile?.picture" />
+  </div>
+  <button class="ui red button" (click)="onHandleNavigateToList()">
+    Zurück zur Autoteilen Liste
+  </button>
+  <button class="ui tiny red labeled icon button">
+    <i class="remove icon"></i> Autoteile löschen
+  </button>
+  <!--   <a
+    class="ui tiny yellow labeled icon button"
+    [routerLink]="['../../admin/edit', book.isbn]"
+  >
+    <i class="write icon"></i> Buch bearbeiten
+  </a> -->
+</div>
 
-<a href="/autoteile/1"></a>
+<div *ngIf="!autoteile$">
+  <button [routerLink]="['/', 'list']">Zurück zur Autoteilen Liste</button>
+</div>

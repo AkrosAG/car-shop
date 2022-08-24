@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AutoTeile } from 'src/app/model/auto-teile';
+import { AutoTeileService } from 'src/app/services/auto-teile.service';
 
 @Component({
   selector: 'app-auto-teile-detail-ansicht',
@@ -7,11 +10,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./auto-teile-detail-ansicht.component.css'],
 })
 export class AutoTeileDetailAnsichtComponent implements OnInit {
-  constructor(private route: ActivatedRoute) {
+  autoteile$: Observable<AutoTeile> | undefined;
+
+  constructor(
+    private autoteileService: AutoTeileService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const autoTeileId = params['id'];
+      this.autoteile$ = this.autoteileService.getAutoTeile(
+        params['autoteileId']
+      );
     });
   }
 
-  ngOnInit(): void {}
+  onHandleNavigateToList(): void {
+    this.router.navigate(['/', 'list']);
+  }
 }

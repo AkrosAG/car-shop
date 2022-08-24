@@ -14,4 +14,8 @@ export class AutoTeileService {
   getAllAutoTeilen(): Observable<AutoTeile[]> {
     return this.http.get<AutoTeile[]>(this.backendUrl);
   }
+
+  getAutoTeile(autoteileId: string): Observable<AutoTeile> {
+    return this.http.get<AutoTeile>(`${this.backendUrl}/${autoteileId}`);
+  }
 }
