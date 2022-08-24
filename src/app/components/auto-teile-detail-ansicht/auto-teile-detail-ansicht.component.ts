@@ -11,6 +11,7 @@ import { AutoTeileService } from 'src/app/services/auto-teile.service';
 })
 export class AutoTeileDetailAnsichtComponent implements OnInit {
   autoteile$: Observable<AutoTeile> | undefined;
+  autoteileId: string = '';
 
   constructor(
     private autoteileService: AutoTeileService,
@@ -20,6 +21,7 @@ export class AutoTeileDetailAnsichtComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
+      this.autoteileId = params['autoteileId'];
       this.autoteile$ = this.autoteileService.getAutoTeile(
         params['autoteileId']
       );
@@ -28,5 +30,13 @@ export class AutoTeileDetailAnsichtComponent implements OnInit {
 
   onHandleNavigateToList(): void {
     this.router.navigate(['/', 'list']);
+  }
+
+  onHandleRemove(): void {
+    if (confirm('Autoteile wirklich löschen')) {
+      this.autoteileService
+        .deleteAutoteile(this.autoteileId)
+        .subscribe((response) => this.router.navigateByUrl('/list'));
+    }
   }
 }
