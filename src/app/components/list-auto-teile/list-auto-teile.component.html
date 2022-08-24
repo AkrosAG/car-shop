@@ -1,6 +1,9 @@
+<button class="ui red button" (click)="onNavigate()">
+  Neue Autoteile hinzufügen
+</button>
 <div class="ui middle aligned selection divided list">
   <ng-container *ngFor="let autoTeile of autoTeilen$ | async as autoTeilen">
-    <a class="item">
+    <a class="item" [routerLink]="['/', 'autoteile', autoTeile?.id]">
       <img
         class="ui tiny image"
         *ngIf="autoTeile.picture"
