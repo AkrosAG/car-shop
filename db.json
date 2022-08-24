@@ -8,7 +8,10 @@
       "quantity": 42,
       "picture": "https://i5.walmartimages.com/asr/1e7d1052-976c-45c1-9749-3690bd029afb_1.53c412220f398adcf2b747834c09a73d.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
       "madeIn": "US",
-      "keywords": ["tires", "wheel"],
+      "keywords": [
+        "tires",
+        "wheel"
+      ],
       "technical_details": {
         "brand": "Goodyear",
         "model": "Fortera HL",
@@ -22,7 +25,10 @@
       "quantity": 31,
       "picture": "https://images-na.ssl-images-amazon.com/images/I/81eIczjb9sL._SL1500_.jpg",
       "madeIn": "DE",
-      "keywords": ["transmission", "belt"],
+      "keywords": [
+        "transmission",
+        "belt"
+      ],
       "technical_details": {
         "brand": "Continental Elite",
         "item_weight": "6.4 ounces",
@@ -36,7 +42,10 @@
       "quantity": 42,
       "picture": "https://images-na.ssl-images-amazon.com/images/I/91wNzKzaFmL._SL1500_.jpg",
       "madeIn": "FR",
-      "keywords": ["tires", "wheel"],
+      "keywords": [
+        "tires",
+        "wheel"
+      ],
       "technical_details": {
         "brand": "Michelin",
         "model": "Latitude Tour",
