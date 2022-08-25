@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { AutoTeile } from 'src/app/model/auto-teile';
-import { AutoTeileService } from 'src/app/services/auto-teile.service';
+import { AutoTeile } from 'src/app/autoteile/autoteile/model/auto-teile';
+import { AutoTeileService } from 'src/app/autoteile/autoteile/services/auto-teile.service';
 import { take } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
