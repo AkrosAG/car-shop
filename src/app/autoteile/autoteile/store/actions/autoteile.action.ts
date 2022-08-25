@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { AutoTeile } from 'src/app/model/auto-teile';
+import { AutoTeile } from 'src/app/autoteile/autoteile/model/auto-teile';
 
 export enum AutoteilenActionTypes {
   LOAD_AUTOTEILEN = '[ListAutoTeileComponent] Load Autoteilen',

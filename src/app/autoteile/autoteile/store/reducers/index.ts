@@ -5,15 +5,15 @@ import {
   createSelector,
   MetaReducer,
 } from '@ngrx/store';
-import { environment } from '../../../environments/environment';
+
 import * as fromAutoteile from './autoteilen.reducer';
 
 export interface CarInvertarState {
-  autoteilen: fromAutoteile.AutoteileState;
+  auto: fromAutoteile.AutoteileState;
 }
 
 export const reducers: ActionReducerMap<CarInvertarState> = {
-  autoteilen: fromAutoteile.reducer,
+  auto: fromAutoteile.reducer,
 };
 
 export const getCarInventarState =

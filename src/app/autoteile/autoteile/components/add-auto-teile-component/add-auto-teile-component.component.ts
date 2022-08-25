@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
-import { AutoTeileService } from 'src/app/services/auto-teile.service';
+import { AutoTeileService } from 'src/app/autoteile/autoteile/services/auto-teile.service';
 
 @Component({
   selector: 'app-add-auto-teile-component',

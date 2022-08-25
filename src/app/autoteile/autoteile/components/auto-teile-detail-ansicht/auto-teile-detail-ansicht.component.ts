@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AutoTeile } from 'src/app/model/auto-teile';
-import { AutoTeileService } from 'src/app/services/auto-teile.service';
+import { AutoTeile } from 'src/app/autoteile/autoteile/model/auto-teile';
+import { AutoTeileService } from 'src/app/autoteile/autoteile/services/auto-teile.service';
 
 @Component({
   selector: 'app-auto-teile-detail-ansicht',
