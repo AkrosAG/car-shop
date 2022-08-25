@@ -13,7 +13,10 @@ import { AutoTeileDetailEditComponent } from './components/auto-teile-detail-edi
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+import { reducers } from './store/reducers';
+import { EffectsModule } from '@ngrx/effects';
+
+import * as fromEffects from './store/effects';
 
 @NgModule({
   declarations: [
@@ -30,11 +33,12 @@ import { reducers, metaReducers } from './reducers';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    EffectsModule.forRoot(fromEffects.effects),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, {}),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [],
