@@ -26,4 +26,14 @@ export class AutoTeileService {
   deleteAutoteile(autoteileId: string): Observable<any> {
     return this.http.delete(`${this.backendUrl}/${autoteileId}`);
   }
+
+  updatePiece(
+    autoteileId: string,
+    autoteile: AutoTeile
+  ): Observable<AutoTeile> {
+    return this.http.patch<AutoTeile>(
+      `${this.backendUrl}/${autoteileId}`,
+      autoteile
+    );
+  }
 }

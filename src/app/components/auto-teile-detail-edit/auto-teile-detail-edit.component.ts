@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AutoTeileDetailEditComponent implements OnInit {
   autoteile!: AutoTeile;
   autoteileForm!: FormGroup;
+  autoteileId: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -29,6 +30,7 @@ export class AutoTeileDetailEditComponent implements OnInit {
         .pipe(take(1))
         .subscribe((autoteile) => {
           this.autoteile = autoteile;
+          this.autoteileId = params['autoteileId'];
           this.autoteileForm.patchValue({ ...this.autoteile });
         });
     });
@@ -61,7 +63,7 @@ export class AutoTeileDetailEditComponent implements OnInit {
 
   submitForm(): void {
     this.autoteileService
-      .addAuteile(this.autoteileForm.value)
+      .updatePiece(this.autoteileId, this.autoteileForm.value)
       .pipe(take(1))
       .subscribe((response) => this.router.navigate(['', 'list']));
   }
