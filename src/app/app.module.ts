@@ -33,7 +33,7 @@ import * as fromEffects from './store/effects';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    EffectsModule.forRoot(fromEffects.effects),
+    EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

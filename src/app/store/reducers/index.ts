@@ -8,13 +8,9 @@ import {
 import { environment } from '../../../environments/environment';
 import * as fromAutoteile from './autoteilen.reducer';
 
-export interface CarInvertarState {
-  autoteilen: fromAutoteile.AutoteileState;
-}
+export interface CarInvertarState {}
 
-export const reducers: ActionReducerMap<CarInvertarState> = {
-  autoteilen: fromAutoteile.reducer,
-};
+export const reducers: ActionReducerMap<CarInvertarState> = {};
 
 export const getCarInventarState =
   createFeatureSelector<CarInvertarState>('carinventory');

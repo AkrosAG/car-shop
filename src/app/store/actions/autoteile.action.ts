@@ -10,12 +10,3 @@ export enum AutoteilenActionTypes {
   DELETE_AUTOTEILE = '[AutoTeileDetailAnsichtComponent] Delete Autoteile ',
   DELETE_AUTOTEILE_SUCCESS = '[AutoTeileDetailAnsichtComponent] Delete Autoteile Success',
 }
-
-export const LoadAutoteilen = createAction(
-  AutoteilenActionTypes.LOAD_AUTOTEILEN
-);
-
-export const LoadAutoteilenSuccess = createAction(
-  AutoteilenActionTypes.LOAD_AUTOTEILEN_SUCCESS,
-  props<{ autoteilen: AutoTeile[] }>()
-);

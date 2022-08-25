@@ -8,23 +8,6 @@ import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class AutoteilenEffects {
-  loadAutoteilen$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(fromAutoteileAction.LoadAutoteilen),
-      mergeMap(() =>
-        this.autoteileService.getAllAutoTeilen().pipe(
-          map((autoteilen) =>
-            fromAutoteileAction.LoadAutoteilenSuccess({ autoteilen })
-          ),
-          catchError((error) => {
-            console.error(error);
-            return EMPTY;
-          })
-        )
-      )
-    )
-  );
-
   constructor(
     private actions$: Actions,
     private store: Store,

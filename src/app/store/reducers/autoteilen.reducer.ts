@@ -2,20 +2,8 @@ import { createReducer, on } from '@ngrx/store';
 import * as fromAutoteileActions from './../actions';
 import { AutoTeile } from 'src/app/model/auto-teile';
 
-export interface AutoteileState {
-  autoteilen: AutoTeile[];
-}
+export interface AutoteileState {}
 
-export const initialState: AutoteileState = {
-  autoteilen: [],
-};
+export const initialState: AutoteileState = {};
 
-export const reducer = createReducer(
-  initialState,
-  on(fromAutoteileActions.LoadAutoteilenSuccess, (state, { autoteilen }) => {
-    return {
-      ...state,
-      autoteilen: [...autoteilen],
-    };
-  })
-);
+export const reducer = createReducer(initialState);
