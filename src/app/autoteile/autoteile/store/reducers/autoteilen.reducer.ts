@@ -12,10 +12,5 @@ export const initialState: AutoteileState = {
 
 export const reducer = createReducer(
   initialState,
-  on(fromAutoteileActions.LoadAutoteilenSuccess, (state, { autoteilen }) => {
-    return {
-      ...state,
-      autoteilen: [...autoteilen],
-    };
-  })
+
 );
